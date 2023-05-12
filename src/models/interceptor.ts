@@ -1,5 +1,4 @@
 export interface Fecher<T> {
-    key: string;
     fecher: () => Promise<T>;
 }
 

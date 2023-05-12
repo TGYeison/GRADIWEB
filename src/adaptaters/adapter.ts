@@ -1,8 +1,6 @@
-import SWR from 'vanilla-swr';
-
 import type { Fecher, Response } from '../models/interceptor';
 
-export const Adapter = <T>({key, fecher}: Fecher<T>): Response<T> => {
+export const Adapter = <T>({fecher}: Fecher<T>): Response<T> => {
     const stateAdapter: Response<T> = {
         isLoading: false,
         data: null,
