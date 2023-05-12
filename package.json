@@ -12,5 +12,9 @@
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "vanilla-swr": "^1.1.0"
   }
 }
