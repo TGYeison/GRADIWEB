@@ -1,12 +1,4 @@
-interface CardProps {
-    title: string;
-    img: {
-        src: string;
-        alt: string;
-    };
-}
-
-const makeCard = (props:any) => (`
+const makeCard = () => (`
     <section class="card">
         <div class="card__content-image">
             <img src="${''}" alt="${''}" class="card__image">
