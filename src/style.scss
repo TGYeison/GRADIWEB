@@ -1,7 +1,9 @@
+$color_light: #FFFFFF;
 $color_primary: #EFA693;
 $color_secondary: #CAF0FF;
 $color_focus: #FFC658;
 $color_bg_primary: #FFDCD3;
+$color_bg_gray: #939393;
 $color_bg_secondary: #D1F1FF; 
 $color_txt_primary: #444950;
 $color_txt_secondary: #939393;
@@ -31,5 +33,7 @@ body {
 }
 
 @import './styles/fonts.scss';
+@import './styles/animation.scss';
 @import './styles/components.scss';
+
 
