@@ -1,24 +1,39 @@
 import './style.scss';
 
-import { Adapter } from './adaptaters/adapter';
 import axios from 'axios';
 
 const getProducts = async (): Promise<any> => {
-  const url = 'https://gradiweba-test.myshopify.com/admin/api/2023-01/products.json';
-  const res = await axios.get(url, {
-    headers: {
-      "X-Shopify-Access-Token": "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",
-      "Access-Control-Allow-Origin": "*",
-      'Content-Type': 'application/json',
-    }
-  });
+  const stateReq: {
+    error: null| string;
+    data: null| any;
+  } =  {
+      error: null,
+      data: null,
+  }
 
-  return res;
+  try {
+    const url = 'https://gradistore-spi.herokuapp.com/products/all';
+    const res = await axios.get(url)
+      .then((response) => response.data);
+
+    stateReq.data = res;
+  } catch (error) {
+    stateReq.error = (error as Error).message;
+  } finally {
+    return stateReq;
+  }
 }
 
-const { data } = Adapter({ fecher: getProducts });
 
-console.log("data", data);
+const startRequest = async () => {
+  const data = await getProducts();
+  console.log("data", data);
+}
+
+
+startRequest();
+
+
 
 
 

@@ -10,21 +10,55 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        background-color: $color_bg_secondary;
+        background-color: #D1F1FF;
+
+
+        &::after {
+            content: "";
+            height: 30%;
+            width: 100%;
+            position: absolute;
+            background-size: cover;
+            background-position-y: top;
+            background-repeat: no-repeat;
+            background-image: url(/public/img/wave.svg);
+        }
     }
 
     &__content {
-        margin: 12.3125rem auto;
+        margin-top: 12.3125rem;
         width: 100%;
         z-index: 1;
         text-align: center;
         max-width: 47.3125rem;
-       
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 9.375rem;
+        }
     }
 
     &__title {
         margin-top: 0;
-        
+        margin-bottom: 0;
         font-size: $txt_font_lg;
+
+        @media screen and (max-width: 767px) {
+            font-size: $txt_font_m_lg;
+        }
+    }
+
+    &__paragraph {
+        margin-top: 8px;
+        font-family: 'FilsonPro';
+        font-size: $txt_font_m;
+        color: $color_txt_secondary
+    }
+
+    &__form-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }

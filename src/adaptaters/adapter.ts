@@ -11,14 +11,13 @@ export const Adapter = <T>({fecher}: Fecher<T>): Response<T> => {
         const res = fecher();
         
         res.then((res) => {
+            console.log(res);
             stateAdapter.data = res;
         });
     } catch (error) {
         stateAdapter.error = (error as Error).message;
     }finally {
         stateAdapter.isLoading = true;
-    }
-
-   
-    return stateAdapter
+        return stateAdapter;
+    }  
 }
