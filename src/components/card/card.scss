@@ -1,0 +1,140 @@
+.card {
+    width: 320px;
+    margin-right: 14px;
+
+   @media ( max-width: $screen_media) {
+        width: 240px;
+    }
+
+    &__content {
+
+        &-image {
+            width: 100%;
+            padding: 10px 13px;
+            aspect-ratio: 1;
+            height: auto;
+            position: relative;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-color: $color_bg_primary;
+        }
+
+        &-info {
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+        }
+    }
+
+    &__image {
+        top: -4px;
+        left: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        object-fit: cover;
+        position: absolute;
+        z-index: 0;
+        transition: all .3s;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all .3s;
+        }
+    }
+
+    &__offer {
+        top: 10px;
+        right: 13px;
+        padding: 4px 10px;
+        position: absolute;
+        border-radius: 13px;
+        background-color: $color_focus;
+    }
+
+    &__title {
+        width: 100%;
+        font-weight: 700;
+        font-size: $txt_font_l;
+        position: relative;
+        font-family: 'FilsonProBold';
+    }
+
+    &__qualify {
+        width: 70%;
+        display: flex;
+        margin-top: 8px;
+    }
+
+    &__assessment {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-right: 4px;
+    }
+
+    &__valuations {
+        font-weight: 400;
+        font-family: 'FilsonPro';
+        font-size: $txt_font_x;
+        color: $color_txt_secondary;
+    }
+
+    &__price {
+        flex: 1;
+        display: flex;
+        margin-top: 8px;
+
+        &-prev {
+            text-decoration: line-through;
+            text-decoration-thickness: 1px;
+            color: $color_txt_secondary;
+            margin-right: 8px;
+        }
+    }
+}
+
+
+.assessment{
+    &__item { 
+        width: auto;
+        height: auto;
+        margin-right: 2px;
+
+        .active {
+            background-color: $color_focus;
+        }
+    }
+
+    &__icon {
+        width: 17px;
+        height: 17px;
+        display: block;
+        background-color: $color_bg_gray;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+}
+
+.btn {
+    &__primary {
+        padding: 12px 32px;
+        border: none;
+        cursor: pointer;
+        font-size: $txt_font_x;
+        color: $color_light;
+        font-weight: 700;
+        border-radius: 24px;
+        background-color: $color_primary;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $color_bg_primary;
+            transition: background-color 0.3s ease;
+        }
+    }
+}

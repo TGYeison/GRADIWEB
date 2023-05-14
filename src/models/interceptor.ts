@@ -1,9 +1,9 @@
-export interface Fecher<T> {
-    fecher: () => Promise<T>;
+export interface Fecher<T, R> {
+    interceptor: () => Promise<T>;
+    adapter: (data:any) => Promise<R[]>;
 }
 
-export interface Response<T> {
-    data: T | null;
-    error?: string | null;
-    isLoading: boolean;
+export interface Response<R> {
+    data: R | null;
+    error: string | null;
 }

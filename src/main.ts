@@ -1,24 +1,31 @@
 import './style.scss';
 
-import { Adapter } from './adaptaters/adapter';
-import axios from 'axios';
+import { cntrlProduct } from './entity/products/controller/product.controller';
+import { makeCarousel } from './components/carousel/carousel';
+import cntrlForm from './components/form/form';
 
-const getProducts = async (): Promise<any> => {
-  const url = 'https://gradiweba-test.myshopify.com/admin/api/2023-01/products.json';
-  const res = await axios.get(url, {
-    headers: {
-      "X-Shopify-Access-Token": "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",
-      "Access-Control-Allow-Origin": "*",
-      'Content-Type': 'application/json',
-    }
-  });
-
-  return res;
+const errorBurden = (target: HTMLElement, msg: string) => {
+  target.innerHTML = msg;
 }
 
-const { data } = Adapter({ fecher: getProducts });
+async function main() {
+  const targetForm = document.querySelector('form.form');
+  cntrlForm(targetForm as HTMLElement);
 
-console.log("data", data);
+  //Carousel building
+  const contentCarousel = document.querySelector('.content');
+  const {data, error} = await cntrlProduct();
+
+  if (error != null) 
+    return errorBurden(contentCarousel as HTMLElement, error);
+
+  makeCarousel(contentCarousel as HTMLElement, data);
+}
+
+
+main();
+
+
 
 
 
