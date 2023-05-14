@@ -10,7 +10,7 @@
         align-items: flex-end;
         justify-content: space-around;
 
-        @media screen and (max-width: 740px) {
+        @media (max-width: $screen_media) {
             margin-left: 30px;
             justify-content: flex-start;
         }
@@ -18,8 +18,20 @@
 
     &__slider {
         width: 100%;
+        position: relative;
         padding: 50px 0;
         overflow-x: hidden;
+        height: 488px;
+
+        &-content {
+            transition: left 1s;
+            position: absolute;
+            display: inline-flex;
+
+            &:hover {
+                transition: left 1s;
+            }
+        }
     }
 
     &__more {
@@ -49,13 +61,13 @@
             border-radius: 12px;
             background-color: $color_bg_secondary;
 
-            @media screen and (max-width: 740px) {
+            @media (max-width: $screen_media) {
                 top: 17px;
                 left: 0;
             }
         }
 
-        @media screen and (max-width: 740px) {
+        @media (max-width: $screen_media) {
             font-size: $txt_font_m_lg;
         }
     }
@@ -67,7 +79,7 @@
         display: flex;
         justify-content: flex-end;
 
-        @media screen and (max-width: 740px) {
+        @media (max-width: $screen_media) {
             justify-content: flex-start;
         }
     }
