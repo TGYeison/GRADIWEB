@@ -24,6 +24,7 @@
         height: 488px;
 
         &-content {
+            left: 0;
             transition: left 1s;
             position: absolute;
             display: inline-flex;

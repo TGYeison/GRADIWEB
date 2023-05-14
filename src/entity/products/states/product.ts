@@ -16,7 +16,7 @@ export interface TypeProd {
     id: string;
     title: string;
     tags: string[];
-    feacturedImage: ImageProd;
+    featuredImage: ImageProd;
     prices:  PriceProd;
     totalInventory: number;
     tracksInventory: boolean;

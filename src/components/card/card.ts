@@ -1,3 +1,4 @@
+import type { TypeProd } from "../../entity/products/states/product";
 import { fortmatCurrency } from "../../utils/format";
 
 export const makeAssessment = (value:number) => {
@@ -18,7 +19,7 @@ export const makeAssessment = (value:number) => {
 }
 
 
-export const makeCard = (data:any) => (`
+export const makeCard = (data:TypeProd) => (`
     <section class="card">
         <div class="card__content-image">
             <img src="${data.featuredImage.url}" alt="${''}" class="card__image">

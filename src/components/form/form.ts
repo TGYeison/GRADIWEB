@@ -16,6 +16,8 @@ const eventForm = (props: { event: SubmitEvent, target: HTMLElement }) => {
         return;
     }
 
+    (props.event as any).target.reset();
+    
     if (!isMail && msgError) return;
 
     if (isMail && msgError) msgError.remove();
