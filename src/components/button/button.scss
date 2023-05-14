@@ -1,0 +1,45 @@
+.btn {
+    border: none;
+    background: none;
+    font-weight: 700;
+    border-radius: 24px;
+    font-size: $txt_font_x;
+    transition: all .3s;
+    cursor: pointer;
+
+    &__w {
+        padding: 12px 32px;
+
+        &-full {
+            width: 100%;
+            padding: 12px 0;
+            box-sizing: border-box;
+        }
+    }
+
+    &__primary {
+        color: $color_light;
+        background-color: $color_primary;
+        
+        &:hover {
+            transition: all .3s;
+            background-color: $color_bg_primary;
+        }
+    }
+
+    &__secondary {
+        color: $color_primary;
+        background-color: $color_light;
+        z-index: 2;
+        font-weight: 700;
+        font-size: $txt_font_m;
+        box-shadow: 0 0 5px rgba($color: $color_txt_secondary, $alpha: .2);
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $color_focus;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+    }
+}

@@ -16,6 +16,8 @@ $txt_font_xs: 13px;
 $txt_font_m_lg: 28px;
 $txt_font_m_xs: 12px;
 
+$screen_media: 720px;
+
 body {
     margin: 0;
 }
@@ -33,7 +35,6 @@ body {
 }
 
 @import './styles/fonts.scss';
-@import './styles/animation.scss';
 @import './styles/components.scss';
 
 
