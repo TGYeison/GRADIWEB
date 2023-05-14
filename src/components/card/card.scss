@@ -1,8 +1,8 @@
 .card {
     width: 320px;
-    margin: 0 8px;
+    margin-right: 14px;
 
-    @media screen and (max-width: 768px) {
+   @media ( max-width: $screen_media) {
         width: 240px;
     }
 
@@ -22,12 +22,6 @@
             justify-content: center;
             align-items: flex-end;
             background-color: $color_bg_primary;
-            transition: aspect-ratio .3s;
-
-            &:hover {
-                aspect-ratio: 4/5;
-                transition: aspect-ratio .3s;
-            }
         }
 
         &-info {
@@ -45,6 +39,12 @@
         object-fit: cover;
         position: absolute;
         z-index: 0;
+        transition: all .3s;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all .3s;
+        }
     }
 
     &__offer {
@@ -56,33 +56,12 @@
         background-color: $color_focus;
     }
 
-    &__btn {
-        width: 100%;
-        padding: 12px 0;
-        border: none;
-        border-radius: 20px;
-        box-sizing: border-box;
-        z-index: 2;
-        font-weight: 700;
-        cursor: pointer;
-        color: $color_primary;
-        font-size: $txt_font_m;
-        box-shadow: 0 0 5px rgba($color: $color_txt_secondary, $alpha: .2);
-        background-color: $color_light;
-        transition: all 0.3s ease;
-
-        &:hover {
-            color: $color_focus;
-            box-shadow: none;
-            transition: all 0.3s ease;
-        }
-    }
-
     &__title {
         width: 100%;
         font-weight: 700;
         font-size: $txt_font_l;
         position: relative;
+        font-family: 'FilsonProBold';
     }
 
     &__qualify {

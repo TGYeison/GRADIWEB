@@ -1,37 +1,28 @@
 import './style.scss';
 
-import axios from 'axios';
+import { cntrlProduct } from './entity/products/controller/product.controller';
+import { makeCarousel } from './components/carousel/caroucel';
+import cntrlForm from './components/form/form';
 
-const getProducts = async (): Promise<any> => {
-  const stateReq: {
-    error: null| string;
-    data: null| any;
-  } =  {
-      error: null,
-      data: null,
-  }
+const errorBurden = (target: HTMLElement, msg: string) => {
+  target.innerHTML = msg;
+}
 
-  try {
-    const url = 'https://gradistore-spi.herokuapp.com/products/all';
-    const res = await axios.get(url)
-      .then((response) => response.data);
+async function main() {
+  const targetForm = document.querySelector('form.form');
+  cntrlForm(targetForm as HTMLElement);
 
-    stateReq.data = res;
-  } catch (error) {
-    stateReq.error = (error as Error).message;
-  } finally {
-    return stateReq;
-  }
+  const contentCarousel = document.querySelector('.content');
+  const {data, error} = await cntrlProduct();
+
+  if (error != null) 
+    return errorBurden(contentCarousel as HTMLElement, error);
+
+  makeCarousel(contentCarousel as HTMLElement, data);
 }
 
 
-const startRequest = async () => {
-  const data = await getProducts();
-  console.log("data", data);
-}
-
-
-startRequest();
+main();
 
 
 
