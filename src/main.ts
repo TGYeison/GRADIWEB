@@ -1,7 +1,7 @@
 import './style.scss';
 
 import { cntrlProduct } from './entity/products/controller/product.controller';
-import { makeCarousel } from './components/carousel/caroucel';
+import { makeCarousel } from './components/carousel/carousel';
 import cntrlForm from './components/form/form';
 
 const errorBurden = (target: HTMLElement, msg: string) => {
@@ -12,6 +12,7 @@ async function main() {
   const targetForm = document.querySelector('form.form');
   cntrlForm(targetForm as HTMLElement);
 
+  //Carousel building
   const contentCarousel = document.querySelector('.content');
   const {data, error} = await cntrlProduct();
 

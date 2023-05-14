@@ -10,11 +10,11 @@ export const templateCarousel = (data: any) => (`
           </span>
         </h5>
         <div class="carousel__actions">
-          <button class="carousel__action prev">
+          <button type="button" class="carousel__action prev">
             <span class="carousel__action-icon carousel__action-icon-prev">
             </span>
           </button>
-          <button class="carousel__action next">
+          <button type="button" class="carousel__action next">
             <span class="carousel__action-icon">
             </span>
           </button>

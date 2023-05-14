@@ -1,8 +1,10 @@
+import type { TypeProd } from "../../entity/products/states/product";
+
 import { templateCarousel } from "./template";
 import { createCarousel, createControllers } from "./utils";
 import { numNegativeToPositive } from "../../utils/format";
 
-export const makeCarousel = (target: HTMLElement, data: any) => {
+export const makeCarousel = (target: HTMLElement, data: TypeProd[] | null) => {
     let state = 0;
     let carouselView = 0;
     let carouselWidth = 0;
@@ -25,7 +27,8 @@ export const makeCarousel = (target: HTMLElement, data: any) => {
     if(carouselWidth > 740) scroll = 254;
   
     //create triggers for carousel
-    actionPrev.addEventListener('click', () => {
+    actionPrev.addEventListener('click', (event:Event) => {
+      event.preventDefault();
       const moveScroll = state + scroll;
 
       if (moveScroll <= 0) {
@@ -34,7 +37,8 @@ export const makeCarousel = (target: HTMLElement, data: any) => {
       }
     });
   
-    actionNext.addEventListener('click', () => {
+    actionNext.addEventListener('click', (event:Event) => {
+      event.preventDefault();
       const moveScroll = state - scroll;
 
       if ((numNegativeToPositive(state) + carouselView) <= carouselWidth) {
