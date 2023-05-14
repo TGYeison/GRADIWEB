@@ -10,7 +10,7 @@
         font-size: $txt_font_xs;
         font-family: 'AbhayaLibre';
 
-        @media screen and (max-width: 768px) {
+       @media ( max-width: $screen_media) {
             font-size: $txt_font_m_xs;
         } 
     }
